@@ -13,4 +13,5 @@ module.exports = {
     dbname: process.env.DB_NAME,
     dbport: process.env.DB_PORT,
     secretToken: process.env.SECRET_TOKEN,
+    uriMongodbAtlas: process.env.MONGODB_ATLAS
 };

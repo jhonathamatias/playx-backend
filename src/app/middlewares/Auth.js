@@ -15,11 +15,10 @@ module.exports = (request, response, next) => {
     }
 
     const [ scheme, token ] = parts;
-
     if (!/^Bearer$/i.test(scheme)) {
         return response.status(401).send({ error: 'Token malformatted'});
     }
-
+    
     jwt.verify(token, secretToken, (err, decoded) => {
         if (err) {
             return response.status(401).send({ error: 'Token invalid' });
